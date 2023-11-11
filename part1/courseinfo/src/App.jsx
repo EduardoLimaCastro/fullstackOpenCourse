@@ -1,4 +1,4 @@
-import { Component } from "react"
+
 
 const Header = (props) => {
   return (
