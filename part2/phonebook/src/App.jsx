@@ -54,9 +54,15 @@ const App = () => {
       number: newNumber,
     };
 
-    phoneBookService.create(phonebookData).then((response) => {
-      setPersons(persons.concat(response.data));
-    });
+    phoneBookService
+      .create(phonebookData)
+      .then((response) => {
+        setPersons(persons.concat(response.data));
+      })
+      .catch((error) => {
+        console.log(error.response.data.error);
+        setErrorMessage(`Person Validation Eroor ${error.response.data.error}`);
+      });
   };
 
   const addPhoneBook = (event) => {
