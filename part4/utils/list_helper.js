@@ -36,8 +36,30 @@ const favorite_blog = (blogs) => {
   return favorite;
 };
 
+const most_blogs = (blogs) => {
+  const authorCount = {};
+  let mostAuthor = {
+    author: "",
+    blogs: 0,
+  };
+  blogs.forEach((blog) => {
+    const author = blog.author;
+    authorCount[author] = (authorCount[author] || 0) + 1;
+  });
+  const authorCountArray = Object.entries(authorCount).map(
+    ([author, count]) => ({ author, count })
+  );
+  const sortedAuthorCount = authorCountArray.sort((a, b) => b.count - a.count);
+  mostAuthor = {
+    author: sortedAuthorCount[0].author,
+    blogs: sortedAuthorCount[0].count,
+  };
+  return mostAuthor;
+};
+
 module.exports = {
   dummy,
   total_likes,
   favorite_blog,
+  most_blogs,
 };
