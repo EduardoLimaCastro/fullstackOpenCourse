@@ -18,7 +18,26 @@ const total_likes = (blogs) => {
   }
 };
 
+const favorite_blog = (blogs) => {
+  let favorite = {
+    title: "a",
+    author: "a",
+    likes: 0,
+  };
+  for (let n = 0; n < blogs.length; n++) {
+    if (blogs[n].likes > favorite.likes) {
+      favorite = {
+        title: blogs[n].title,
+        author: blogs[n].author,
+        likes: blogs[n].likes,
+      };
+    }
+  }
+  return favorite;
+};
+
 module.exports = {
   dummy,
   total_likes,
+  favorite_blog,
 };
