@@ -4,6 +4,7 @@ const helper = require("./helper");
 const supertest = require("supertest");
 const app = require("../app");
 const api = supertest(app);
+const Blog = require("../models/blog");
 
 describe("post tests", () => {
   test("Verifies POST request", async () => {
@@ -52,6 +53,21 @@ describe("post tests", () => {
         .expect(201)
         .expect("Content-Type", /application\/json/);
     }
+  });
+  test("blog without title", async () => {
+    newBlog = {
+      author: "Eduardo Castro",
+      url: "www.hello.com",
+      likes: "12",
+    };
+    api.post("/api/blogs", (req, res) => {
+      if (!req.body.hasOwnProperty("title")) {
+        // If the property is missing, send a 400 Bad Request response
+        return res
+          .status(400)
+          .json({ error: "Missing required property: title" });
+      }
+    });
   });
   //   test('fails with status code 400 if data invalid', async () => {
   //     const newBlog = {
