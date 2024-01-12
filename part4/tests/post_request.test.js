@@ -8,10 +8,11 @@ const api = supertest(app);
 describe("post tests", () => {
   test("Verifies POST request", async () => {
     const newBlog = {
-      title: "hello world",
-      author: "Eduardo Castro",
-      url: "www.hello.com",
-      likes: "12",
+      title: "Things I don't know as of 2018",
+      author: "Dan Abramov",
+      url: "https://overreacted.io/things-i-dont-know-as-of-2018/",
+      likes: "0",
+      user: "65a1437ef45c4db8e6ea5e42",
     };
 
     await api
