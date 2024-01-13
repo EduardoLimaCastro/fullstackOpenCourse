@@ -4,8 +4,8 @@ import Persons from "./components/Persons/Persons";
 import Filter from "./components/FIlter/Filter";
 import PersonForm from "./components/PersonForm/PersonForm";
 import phoneBookService from "./services/phoneBookServices";
-import NotificationError from "./components/NotificationMessage/NotificationError";
-import NotificationSucsess from "./components/NotificationMessage/NotificationSucsess";
+import NotificationError from "../components/NotificationMessage/NotificationError";
+import NotificationSucsess from "../components/NotificationMessage/NotificationSucsess";
 import "./app.css";
 
 const App = () => {
