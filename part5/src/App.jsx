@@ -94,7 +94,7 @@ const App = () => {
       setNewUrl("");
     });
 
-    setSucsessMessage(`A new blog ${newTitle} added`);
+    setSucsessMessage(`A new blog: ${newTitle} added`);
     setTimeout(() => {
       setSucsessMessage(null);
     }, 5000);
