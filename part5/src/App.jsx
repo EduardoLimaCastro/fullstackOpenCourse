@@ -95,6 +95,9 @@ const App = () => {
     });
 
     setSucsessMessage(`A new blog ${newTitle} added`);
+    setTimeout(() => {
+      setSucsessMessage(null);
+    }, 5000);
   };
 
   const blogForm = () => (
